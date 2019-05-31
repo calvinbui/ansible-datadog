@@ -67,10 +67,11 @@
 
 - name: Setup integrations
   copy:
-    path: "/etc/datadog-agent/conf.d/{{ item.key }}/conf.yaml"
-    content: "{{ item.value }}"
+    dest: "/etc/datadog-agent/conf.d/{{ item.key }}/conf.yaml"
+    content: "{{ item.value | to_nice_yaml }}"
     owner: "{{ datadog_user }}"
-  loop: "{{ datadog-integrations }}"
+    group: "{{ datadog_user }}"
+  loop: "{{ datadog_integrations | dict2items }}"
   notify: Restart Datadog Agent
 
 - name: Start Datadog Agent
