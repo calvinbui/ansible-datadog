@@ -1,3 +1,8 @@
+[![Build Status](https://travis-ci.com/calvinbui/ansible-datadog.svg?branch=master)](https://travis-ci.com/calvinbui/ansible-datadog)
+![GitHub release](https://img.shields.io/github/release/calvinbui/ansible-datadog.svg)
+![Ansible Quality Score](https://img.shields.io/ansible/quality/40820.svg)
+![Ansible Role](https://img.shields.io/ansible/role/d/40820.svg)
+
 # Ansible Datadog Agent
 
 Install and configure the Datadog agent

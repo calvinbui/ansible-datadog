@@ -9,10 +9,12 @@ lint:
     config-data:
       line-length: disable
 platforms:
-  - name: ansible-portainer
-    image: docker:dind
+  - name: ansible-datadog
+    image: geerlingguy/docker-ubuntu1804-ansible
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
     privileged: true
-    command: "dockerd"
+    pre_build_image: true
 provisioner:
   name: ansible
   options:
